@@ -2638,13 +2638,3 @@ html, body {
 }
 
 
-/* boxes services courses */
-@media (max-width: 767px) {
-  .problem-solution-section .row.d-flex {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 480px; /* keeps layout centered even in desktop mobile view */
-  }
-}
