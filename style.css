@@ -2680,5 +2680,45 @@ html, body {
     word-break: break-word;
   }
 }
+/* overlay strech */
+
+@media (max-width: 767px) {
+  .problem-solution-image {
+    position: relative;
+    height: auto;
+  }
+
+  .problem-solution-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .problem-solution-text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-color: rgba(5, 27, 46, 0.7); /* fallback */
+    z-index: 2;
+  }
+
+  .problem-solution-block {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .problem-solution-content {
+    z-index: 1;
+  }
+}
 
 
