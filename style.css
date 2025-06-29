@@ -302,6 +302,7 @@ h6, .h6{color:#051b2e}h6 a,.h6 a{color:#051b2e}h6 a:hover,h6 a:active,h6 a:focus
     flex-wrap: wrap;
 }
 
+
 /* Owl Carousel Nav Buttons (template specific) */
 .slider-fade1.owl-carousel .owl-nav button.owl-prev,
 .slider-fade1.owl-carousel .owl-nav button.owl-next {
@@ -378,7 +379,6 @@ h6, .h6{color:#051b2e}h6 a,.h6 a{color:#051b2e}h6 a:hover,h6 a:active,h6 a:focus
         transform: none;
     }
 }
-
 
 /* =====================================
 ---------- CTA Boxes Section -----------
@@ -471,7 +471,7 @@ h6, .h6{color:#051b2e}h6 a,.h6 a{color:#051b2e}h6 a:hover,h6 a:active,h6 a:focus
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(5, 27, 46, 0.7); /* Dark semi-transparent overlay */
+   /* background-color: rgba(5, 27, 46, 0.7); /* Dark semi-transparent overlay */
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -590,80 +590,293 @@ h6, .h6{color:#051b2e}h6 a,.h6 a{color:#051b2e}h6 a:hover,h6 a:active,h6 a:focus
 /* =====================================
 ---------- Services & Courses Section -----------
 ===================================== */
+/* =====================================
+---------- Services & Courses Section -----------
+===================================== */
+/* =====================================
+---------- Services & Courses Section -----------
+===================================== */
 .services-section, .courses-section {
     background-color: #fff;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 .services-section.bg-light, .courses-section.bg-light {
     background-color: rgba(190,221,234,0.2) !important;
 }
 
-/* Owl Carousel specific overrides for services/courses */
+.services-section .section-title02, .courses-section .section-title02 {
+    margin-bottom: 50px;
+}
+
+/* Owl Carousel general overrides (applies to both) */
 .owl-carousel .owl-item img {
-    display: block; /* Ensure image takes full width of item */
+    display: block;
     width: 100%;
     height: auto;
 }
 .owl-theme .owl-dots {
-    margin-top: 40px !important; /* Spacing for dots below carousel */
+    margin-top: 40px !important;
 }
 .owl-theme .owl-dots .owl-dot span {
-    background: rgba(0,0,0,0.15); /* Default dot color */
+    background: rgba(0,0,0,0.15);
 }
-.owl-theme .owl-dots .owl-dot:hover span,
-.owl-theme .owl-dots .owl-dot.active span {
-    background:#ffcc53; /* Active/hover dot color */
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background:#ffcc53;
 }
 .owl-nav i, .owl-nav span {
     color:#232323;
     font-size:28px;
 }
-/* Services/Courses Item Card Styling */
+
+/* Services Item Card Styling (card-style05) */
 .card-style05 {
     border: none;
     border-radius: 5px;
-    height: 100%;
-    box-shadow: 0px 3px 10px 0px rgba(41,45,194,0.08);
-    transition: all 0.3s ease;
+    height: 100%; /* Ensures card takes full height of its flex container (owl-item) */
+    box-shadow: 0 0 30px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.37, 0, 0.63, 1);
+    display: flex;
+    flex-direction: column; /* Stacks image and content vertically */
 }
 .card-style05:hover {
-    transform: translateY(-5px); /* Lift effect */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 .card-style05 .blog-img {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    overflow: hidden; /* Ensure images stay within rounded corners */
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
 }
 .card-style05 .blog-img img {
+    border-radius: 5px 5px 0 0;
     width: 100%;
-    height: 250px; /* Fixed height for consistency */
+    height: 200px; /* Fixed height for service images */
     object-fit: cover;
-    transition: transform .3s ease;
+    display: block;
+    transition: transform 0.3s ease;
 }
 .card-style05:hover .blog-img img {
-    transform: scale(1.07); /* Zoom image on hover */
+    transform: scale(1.05);
 }
 .card-style05 .card-body {
     padding: 30px;
+    color: #575a7b;
     text-align: center;
+    flex-grow: 1; /* Allows card-body to fill available vertical space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distributes space inside card-body */
 }
-.card-style05 h3.h4 {
-    font-size: 1.6em;
-    color: #051b2e;
-    margin-bottom: 10px;
+.card-style05 h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
     font-weight: 600;
+    color: #051b2e;
 }
 .card-style05 p {
+    line-height: 1.7;
+    margin-bottom: 25px; /* Space before button */
+    flex-grow: 1; /* Allows paragraph to grow, pushing button down */
+    min-height: 70px; /* Ensures consistent minimum height for the text area */
+    display: -webkit-box; /* For multi-line ellipsis */
+    -webkit-line-clamp: 3; /* Limit to 3 lines before ellipsis */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-style05 .butn-style3 {
+    margin-top: auto; /* Ensures button is always at the bottom */
+}
+
+
+/* Services Slider Navigation Arrows */
+#services-slider .owl-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffcc53;
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: background 0.3s ease;
+    z-index: 10;
+    opacity: 0; /* Hidden by default */
+    visibility: hidden;
+}
+#services-slider.owl-carousel:hover .owl-nav button {
+    opacity: 1; /* Show on hover of the entire slider */
+    visibility: visible;
+}
+#services-slider .owl-nav button:hover {
+    background: #051B2E;
+}
+#services-slider .owl-nav button.owl-prev { left: -50px; }
+#services-slider .owl-nav button.owl-next { right: -50px; }
+
+
+/* Course Card Specifics (course-card) */
+.course-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%; /* Ensures card takes full height of its flex container (owl-item) */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.course-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+.course-img {
+    width: 100%;
+    height: 220px; /* Fixed height for course images */
+    overflow: hidden;
+}
+.course-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.course-card:hover .course-img img {
+    transform: scale(1.05);
+}
+.course-content {
+    padding: 25px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows content area to fill remaining space */
+    justify-content: space-between; /* Distributes space inside content */
+}
+.course-content h3 {
+    font-size: 1.5em;
+    color: #051b2e;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.course-content p {
+    flex-grow: 1;
     color: #575a7b;
     line-height: 1.7;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* Space before button */
+    min-height: 70px; /* **UPDATED:** Matches service section p min-height for more consistent visual empty space */
+    display: -webkit-box; /* For multi-line ellipsis */
+    -webkit-line-clamp: 4; /* Limit to 4 lines before ellipsis */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.explore-service-btn, .explore-course-btn {
-    text-decoration: none;
-    /* Styles are handled by .butn-style3 */
+.course-content .explore-course-btn {
+    margin-top: auto; /* Ensures button is always at the bottom */
+}
+
+/* Course Slider Navigation Arrows */
+#courses-slider .owl-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffcc53;
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    z-index: 10;
+    opacity: 0; /* Hidden by default */
+    visibility: hidden;
+}
+#courses-slider.owl-carousel:hover .owl-nav button {
+    opacity: 1; /* Show on hover of the entire slider */
+    visibility: visible;
+}
+#courses-slider .owl-nav button.owl-prev { left: -50px; }
+#courses-slider .owl-nav button.owl-next { right: -50px; }
+#courses-slider .owl-nav button:hover {
+    background: #051B2E;
 }
 
 
+/* Responsive adjustments for Services & Courses Section */
+@media (max-width: 991px) {
+    .services-section, .courses-section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .service-content h3, .course-content h3 {
+        font-size: 1.4em;
+    }
+    .service-content p, .course-content p {
+        font-size: 0.95em;
+        min-height: auto; /* Allow natural height, as stacking will provide vertical space */
+        -webkit-line-clamp: unset; /* Remove line clamp when stacking */
+    }
+    .service-img img, .course-img img {
+        height: 180px; /* Adjust image height for smaller tablets */
+    }
+    /* Owl carousel nav buttons on smaller screens */
+    #services-slider .owl-nav button,
+    #courses-slider .owl-nav button {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+        opacity: 1; /* Always show on smaller devices, or adjust as desired */
+        visibility: visible;
+    }
+    #services-slider .owl-nav button.owl-prev,
+    #courses-slider .owl-nav button.owl-prev { left: 5px; } /* Adjust position */
+    #services-slider .owl-nav button.owl-next,
+    #courses-slider .owl-nav button.owl-next { right: 5px; } /* Adjust position */
+}
+
+@media (max-width: 767px) {
+    .services-section .section-title02, .courses-section .section-title02 {
+        margin-bottom: 30px;
+    }
+    .service-content, .course-content {
+        padding: 20px;
+    }
+    .service-content h3, .course-content h3 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+    .service-content p, .course-content p {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+    .service-img img, .course-img img {
+        height: 160px; /* Adjust image height for mobile tablets */
+    }
+    .owl-theme .owl-dots {
+        margin-top: 20px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .services-section, .courses-section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .service-content h3, .course-content h3 {
+        font-size: 1.2em;
+    }
+    .service-content p, .course-content p {
+        font-size: 0.85em;
+    }
+    .service-img img, .course-img img {
+        height: 140px; /* Further reduce image height for mobile phones */
+    }
+    /* Hide nav buttons on very small screens, rely on dots */
+    #services-slider .owl-nav,
+    #courses-slider .owl-nav {
+        display: none;
+    }
+}
 /* =====================================
 ---------- About Us Section -----------
 ===================================== */
@@ -1839,4 +2052,803 @@ html {
 --- */
 .about-right .section-title02 {
     margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 767px) {
+  .hero-slider .caption h1 {
+    font-size: 1.8em;
+  }
+
+  .hero-slider .caption p {
+    font-size: 1em;
+    padding: 0 15px;
+  }
+
+  .header-style1 .navigation {
+    padding: 10px 0;
+  }
+
+  .problem-solution-image img,
+  .card-style05 .blog-img img {
+    height: auto; /* Allow it to shrink on mobile */
+  }
+
+  .how-work-card {
+    margin-bottom: 30px;
+  }
+
+  .hero-slider .banner-button {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Responsive adjustments for Hero Section */
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 991px) {
+    /* Header overlap fixed */
+    html {
+        scroll-padding-top: 80px; /* Adjust for potentially taller mobile header */
+    }
+    .hero-slider {
+        margin-top: 80px; /* Adjust hero section offset */
+        height: auto; /* Allow hero section to adjust height based on content */
+        min-height: 70vh; /* Ensure a minimum height for visual appeal */
+    }
+
+    .hero-slider .caption h1 {
+        font-size: 2.5em; /* Smaller font size for hero heading */
+        margin-bottom: 15px;
+    }
+    .hero-slider .caption p {
+        font-size: 1em; /* Smaller font size for hero paragraph */
+        margin-bottom: 20px;
+    }
+    .hero-slider .caption span {
+        font-size: 1em;
+    }
+    .slider-fade1.owl-carousel .owl-nav button.owl-prev{left:0px} /* Keep hero slider nav closer */
+    .slider-fade1.owl-carousel .owl-nav button.owl-next{right:0px}
+    .slider-fade1.owl-theme .owl-nav.disabled+.owl-dots{bottom:30px; right: auto; left: 50%; transform: translateX(-50%);} /* Center hero dots */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 767px) {
+    /* Hero Section - further adjustments */
+    .hero-slider {
+        min-height: 60vh;
+    }
+    .hero-slider .caption h1 {
+        font-size: 2em; /* Even smaller font size */
+    }
+    .hero-slider .caption p {
+        font-size: 0.9em;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 575px) {
+    /* Hero section font sizes for smallest screens */
+    .hero-slider .caption h1 {
+        font-size: 1.8em;
+        line-height: 1.3;
+    }
+    .hero-slider .caption p {
+        font-size: 0.85em;
+    }
+    .hero-slider .caption span {
+        font-size: 0.9em;
+    }
+    .hero-slider .banner-button {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+    }
+    .hero-slider .banner-button .butn-style1,
+    .hero-slider .banner-button .butn-style3 {
+        width: 100%; /* Make buttons full width */
+        max-width: 250px; /* Limit max width for better appearance */
+        margin: 0 auto; /* Center buttons */
+    }
+}
+
+
+/* =====================================
+---------- Services Section -----------
+===================================== */
+.services-section {
+    background-color: #f8f9fa; /* Light background for the section */
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative; /* For potential future positioning of elements */
+}
+
+.services-section .section-title02 {
+    margin-bottom: 50px; /* Space below the section title */
+}
+
+/* Service Card General Styling */
+.service-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Ensures border-radius applies to image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensure equal height for cards in a row/slider */
+    display: flex;
+    flex-direction: column; /* Stacks image and content vertically */
+}
+
+.service-card:hover {
+    transform: translateY(-8px); /* Lifts the card on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Service Image Styling */
+.service-img {
+    position: relative;
+    overflow: hidden; /* Hides parts of the image during zoom */
+    border-radius: 8px 8px 0 0; /* Rounded top corners for image */
+}
+
+.service-img img {
+    width: 100%;
+    height: 220px; /* Fixed height for service images */
+    object-fit: cover; /* Ensures image covers the area without distortion, cropping if necessary */
+    display: block;
+    transition: transform 0.5s ease; /* Smooth zoom transition */
+}
+
+.service-card:hover .service-img img {
+    transform: scale(1.05); /* Subtle zoom effect on image hover */
+}
+
+/* Service Content Styling */
+.service-content {
+    padding: 30px;
+    text-align: center;
+    flex-grow: 1; /* Allows content to take available space, pushing button to bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distributes space between title, paragraph, and button */
+}
+
+.service-content h3 {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #051b2e;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.service-content p {
+    font-size: 1em;
+    color: #575a7b;
+    line-height: 1.7;
+    margin-bottom: 25px; /* Space above the button */
+    flex-grow: 1; /* Allows paragraph to grow and push button down */
+}
+
+.service-content .explore-service-btn {
+    margin-top: auto; /* Pushes the button to the bottom of the content area */
+}
+
+/* Owl Carousel Customizations for Services Slider */
+.services-slider.owl-carousel {
+    margin-top: 50px; /* Space between title and slider */
+}
+
+.services-slider.owl-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px; /* Padding from the sides */
+    pointer-events: none; /* Allows clicks to pass through to underlying elements unless on button */
+}
+
+.services-slider.owl-carousel .owl-nav button.owl-prev,
+.services-slider.owl-carousel .owl-nav button.owl-next {
+    background-color: #ffcc53; /* Primary color buttons */
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    z-index: 10;
+    pointer-events: all; /* Re-enable pointer events for buttons */
+    opacity: 0; /* Hidden by default */
+    visibility: hidden;
+}
+
+.services-slider.owl-carousel:hover .owl-nav button.owl-prev,
+.services-slider.owl-carousel:hover .owl-nav button.owl-next {
+    opacity: 1; /* Show on hover of the entire slider */
+    visibility: visible;
+}
+
+.services-slider.owl-carousel .owl-nav button.owl-prev {
+    left: -20px; /* Adjust position */
+}
+
+.services-slider.owl-carousel .owl-nav button.owl-next {
+    right: -20px; /* Adjust position */
+}
+
+.services-slider.owl-carousel .owl-nav button.owl-prev:hover,
+.services-slider.owl-carousel .owl-nav button.owl-next:hover {
+    background-color: #051b2e; /* Darker background on hover */
+    color: #fff;
+}
+
+.services-slider.owl-theme .owl-dots {
+    text-align: center;
+    margin-top: 40px; /* Space above dots */
+    padding-top: 20px; /* Ensure space from last card */
+}
+
+.services-slider.owl-theme .owl-dots .owl-dot span {
+    background-color: #ccc; /* Inactive dot color */
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.services-slider.owl-theme .owl-dots .owl-dot.active span,
+.services-slider.owl-theme .owl-dots .owl-dot:hover span {
+    background-color: #ffcc53; /* Active and hover dot color */
+}
+
+/* Responsive adjustments for Services Section */
+@media (max-width: 991px) {
+    .services-section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .service-content h3 {
+        font-size: 1.4em;
+    }
+    .service-content p {
+        font-size: 0.95em;
+    }
+    /* Owl carousel nav buttons on smaller screens */
+    .services-slider.owl-carousel .owl-nav button.owl-prev,
+    .services-slider.owl-carousel .owl-nav button.owl-next {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+        opacity: 1; /* Always show on smaller devices, or adjust as desired */
+        visibility: visible;
+    }
+    .services-slider.owl-carousel .owl-nav {
+        padding: 0 5px; /* Reduce side padding for nav buttons */
+    }
+}
+
+@media (max-width: 767px) {
+    .services-section .section-title02 {
+        margin-bottom: 30px;
+    }
+    .service-content {
+        padding: 20px;
+    }
+    .service-content h3 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+    .service-content p {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+    .service-img img {
+        height: 180px; /* Adjust image height for smaller tablets */
+    }
+    .services-slider.owl-theme .owl-dots {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .services-section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .service-content h3 {
+        font-size: 1.2em;
+    }
+    .service-content p {
+        font-size: 0.85em;
+    }
+    .service-img img {
+        height: 160px; /* Further reduce image height for mobile phones */
+    }
+    .services-slider.owl-carousel .owl-nav {
+        display: none; /* Hide nav buttons on very small screens, rely on dots */
+    }
+}
+
+/* Prevent horizontal scroll globally */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Force containers to stay within screen width */
+.container, .row, .col, [class*="col-"] {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fix flex wrap issues on mobile */
+.how-it-works-flex,
+.about-us-flex,
+.arms-model-flex {
+  flex-wrap: wrap !important;
+  overflow-x: hidden !important;
+}
+
+
+/* ========== Mobile Overflow Fixes ========== */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.container, .row, [class*="col-"] {
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+}
+
+.how-it-works-flex,
+.about-us-flex,
+.arms-model-flex {
+  flex-wrap: wrap !important;
+  overflow-x: hidden !important;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .how-it-works-flex,
+  .about-us-flex,
+  .arms-model-flex {
+    flex-direction: column;
+  }
+}
+
+/* challenge and solution in middle */
+/* Stack Challenge & Solution vertically on small screens */
+@media (max-width: 767px) {
+  .problem-solution-section .row.d-flex {
+    flex-direction: column !important;
+  }
+
+  .problem-solution-section .col-sm-6 {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .problem-solution-block {
+    margin-bottom: 30px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .problem-solution-section .row.d-flex {
+    flex-direction: column !important;
+    align-items: center; /* Center child elements */
+  }
+
+  .problem-solution-section .col-sm-6 {
+    width: 100% !important;
+    max-width: 90%; /* Give some margin from sides */
+    margin: 0 auto 30px auto; /* center and space */
+  }
+
+  .problem-solution-block {
+    margin-bottom: 0; /* Already handled by col-sm-6 margin */
+  }
+}
+
+@media (max-width: 767px) {
+  .problem-solution-section .row.d-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .problem-solution-section .col-sm-6 {
+    width: 100% !important;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+
+  .ps-inner {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px; /* Optional: sets a clean max width */
+  }
+}
+
+
+@media (max-width: 767px) {
+  /* Ensure no horizontal overflow */
+  html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Force challenge/solution section to stack and center */
+  .problem-solution-section .row.d-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Force each column to be centered with consistent spacing */
+  .problem-solution-section .col-sm-6 {
+    padding: 0 15px;
+    width: 100% !important;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Optional: constrain card width */
+  .ps-inner {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Ensure image/content inside doesn’t overflow */
+  .problem-solution-block {
+    width: 100%;
+    max-width: 480px; /* You can reduce this if needed */
+  }
+}
+
+
+@media (min-width: 992px) {
+  .problem-solution-section .row.d-flex {
+    display: flex;
+    align-items: stretch; /* Force equal height */
+  }
+
+  .problem-solution-section .col-sm-6 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ps-inner {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .problem-solution-block {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .problem-solution-content {
+    flex-grow: 1; /* Fill remaining space */
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+/* boxes text middle */
+
+@media (max-width: 767px) {
+  .problem-solution-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .problem-solution-content {
+    padding: 30px 25px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .problem-solution-text-overlay {
+    justify-content: center;
+    align-items: flex-start;
+    padding: 25px;
+    text-align: left;
+  }
+}
+@media (max-width: 767px) {
+  .problem-solution-section .row.d-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .problem-solution-section .col-sm-6 {
+    width: 100% !important;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  .problem-solution-block {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .problem-solution-image img {
+    object-position: center;
+  }
+
+  .problem-solution-text-overlay {
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 25px 20px 20px 20px;
+  }
+
+  .problem-solution-content {
+    text-align: left;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .problem-solution-text-overlay .overlay-title,
+  .problem-solution-text-overlay .overlay-subtitle {
+    text-align: left;
+    width: 100%;
+  }
+
+  .problem-solution-content p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .problem-solution-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto !important; /* Ensure it grows with content */
+    overflow: visible !important;
+  }
+
+  .problem-solution-image {
+    height: auto !important;
+    max-height: none !important;
+    overflow: hidden;
+  }
+
+  .problem-solution-text-overlay {
+    height: auto !important;
+    min-height: 120px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
+    overflow: visible;
+  }
+
+  .problem-solution-content {
+    padding: 25px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: visible;
+  }
+
+  .problem-solution-content p {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+
+@media (min-width: 992px) {
+  /* Make each Owl item stretch to full height */
+  #services-slider .owl-stage {
+    display: flex;
+    align-items: stretch;
+  }
+
+  #services-slider .owl-item {
+    display: flex;
+    height: auto !important;
+  }
+
+  /* Force each card to full height */
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* Equalize image and text alignment inside */
+  .service-img {
+    height: 220px;
+    overflow: hidden;
+  }
+
+  .service-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .service-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 20px;
+  }
+
+  .service-content h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+
+  .service-content p {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    line-height: 1.6;
+  }
+
+  .explore-service-btn {
+    margin-top: auto;
+  }
+}
+
+/* HERO CAPTION CENTER FIX */
+.hero-slider .caption {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-slider .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.slider-fade1 .item.full-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+@media (max-width: 767px) {
+  .card-style05 h3 {
+    font-size: 1.2em;
+    line-height: 1.4;
+    text-align: center;
+    word-break: break-word;
+    white-space: normal;
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+
+  .card-style05 p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .card-style05 {
+    height: auto !important;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-style05 .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .card-style05 .butn-style3 {
+    margin-top: auto;
+    text-align: center;
+  }
+}
+
+
+
+
+.northstar-story {
+  background-color: #ffffff;
+ /* border-left: 4px solid #ffcc53;*/
+  padding: 20px 25px;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+}
+
+.northstar-story h4 {
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #051b2e;
+}
+
+.northstar-story p {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.7;
+  color: #575a7b;
+}
+
+
+
+@media (max-width: 767px) {
+  .about-us-section p {
+    font-size: 0.95em;
+    line-height: 1.6;
+  }
+
+  .about-us-section .northstar-story h4,
+  .about-us-section .vision-text h3,
+  .about-us-section h2,
+  .about-us-section h3 {
+    font-size: 1.2em;
+  }
+
+  .about-us-section .about-model p {
+    font-size: 0.95em;
+  }
+}
+
+#services-slider .owl-nav {
+  display: none !important;
 }
