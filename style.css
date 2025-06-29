@@ -2765,3 +2765,90 @@ html, body {
   justify-content: center;
   padding: 0;
 }
+@media (max-width: 767px) {
+  .card-style05 h3 {
+    font-size: 1.2em;
+    line-height: 1.4;
+    text-align: center;
+    word-break: break-word;
+    white-space: normal;
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+
+  .card-style05 p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .card-style05 {
+    height: auto !important;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-style05 .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .card-style05 .butn-style3 {
+    margin-top: auto;
+    text-align: center;
+  }
+}
+
+
+
+
+.northstar-story {
+  background-color: #ffffff;
+ /* border-left: 4px solid #ffcc53;*/
+  padding: 20px 25px;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+}
+
+.northstar-story h4 {
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #051b2e;
+}
+
+.northstar-story p {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.7;
+  color: #575a7b;
+}
+
+
+
+@media (max-width: 767px) {
+  .about-us-section p {
+    font-size: 0.95em;
+    line-height: 1.6;
+  }
+
+  .about-us-section .northstar-story h4,
+  .about-us-section .vision-text h3,
+  .about-us-section h2,
+  .about-us-section h3 {
+    font-size: 1.2em;
+  }
+
+  .about-us-section .about-model p {
+    font-size: 0.95em;
+  }
+}
+
+#services-slider .owl-nav {
+  display: none !important;
+}
