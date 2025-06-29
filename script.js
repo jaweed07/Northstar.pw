@@ -370,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault(); // Prevent the default form submission
 
         // The URL you copied after deploying your Google Apps Script
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxzy56_vYIKVIvtOfVmHUMd_e6olQ6roRupsg57AScRAjbABUY34v0xim8Vk_IjwzgY9g/exec";
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwqU4J53DijDyB3hVfhoyeXl39GVQRl_UDAL0pMrSLuuR4tymPV0aKfvzZgtRzLwgrj/exec";
 
         const formData = {
           fullName: document.getElementById("fullName").value,
